@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.rurimo.jarvis_cms"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/INDEX.LIST'
+    }
+}
+
+dependencies {
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "org.jetbrains.anko:anko:$ankoVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "com.google.firebase:firebase-database:$firebaseDatabaseVersion"
+
+    // coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+    // dialog flow
+    implementation "ai.api:sdk:2.0.7@aar"
+    implementation "ai.api:libai:1.6.12"
+    implementation "com.google.cloud:google-cloud-dialogflow:$dialogFlowVersion"
+    implementation "io.grpc:grpc-okhttp:$okhttpVersion"
+
+    implementation "com.android.support:multidex:$multidexVersion"
+}
+
+apply plugin: 'com.google.gms.google-services'
+apply from: '../spotless.gradle'
