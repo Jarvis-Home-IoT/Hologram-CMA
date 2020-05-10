@@ -4,6 +4,11 @@
 ### Build Status
 ![Android CI](https://github.com/Hologram-IoT-Service/Hologram-CMA/workflows/Android%20CI/badge.svg)
 
+### Download
+[![jitpack](https://jitpack.io/v/Hologram-IoT-Service/Hologram-CMA.svg)](https://jitpack.io/#Hologram-IoT-Service/Hologram-CMA) <br>
+Here is the `jarvis-data` model library that used as common thrid-party library. <br>
+This library is used in `Holohram-CMA` and `Holohram-Hardware-core` project.
+
 ### Used Tech Stacks
 - Kotlin based with Java.
 - Android AppCompat
