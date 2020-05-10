@@ -17,6 +17,9 @@ This library is used in `Holohram-CMA` and `Holohram-Hardware-core` project.
 - Firebase - Remote database for persisting control data from the core and hardware decives.
 - DialogFlow - Query sentences to the remote server and takes answers.
 
+### Architecture
+![screenshot1066765837](https://user-images.githubusercontent.com/27774870/80310532-2c2c9a00-8816-11ea-9f0e-0e13de4dcec5.png)
+
 ### Reference
 https://github.com/skydoves/MagicLight-Controller
 
