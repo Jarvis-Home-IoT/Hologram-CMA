@@ -36,10 +36,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * references:
- * https://github.com/skydoves/MagicLight-Controller
- */
+/** references: https://github.com/skydoves/MagicLight-Controller */
 public class BluetoothLeService extends Service {
 
   private static final String TAG = BluetoothLeService.class.getSimpleName();
