@@ -1,6 +1,9 @@
 # Hologram-CMA
 🌌 Hologram Elas central management application for controling the IoT core systems.
 
+### Build Status
+![Android CI](https://github.com/Hologram-IoT-Service/Hologram-CMA/workflows/Android%20CI/badge.svg)
+
 ### Used Tech Stacks
 - Kotlin based with Java.
 - Android AppCompat
