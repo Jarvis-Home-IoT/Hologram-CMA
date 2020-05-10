@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.rurimo.jarvis_cms
+package com.rurimo.jarvis_data
 
 data class ControlMessage(
   val deviceName: String? = null,

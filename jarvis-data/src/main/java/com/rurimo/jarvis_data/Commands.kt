@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.rurimo.jarvis_cms
+package com.rurimo.jarvis_data
 
 import com.google.firebase.database.DatabaseReference
 
@@ -50,10 +50,18 @@ object Commands {
     return when {
       message.contains(on) -> "turn on"
       message.contains(off) -> "turn off"
-      message.contains(onLights) or message.contains(onLights2) -> "lights on"
-      message.contains(offLights) or message.contains(offLights2) -> "lights off"
-      message.contains(dancing) or message.contains(dancing2) -> "dancing"
-      message.contains(bulb) or message.contains(bulb2) or message.contains(bulb3) -> "bulb"
+      message.contains(onLights) or message.contains(
+        onLights2
+      ) -> "lights on"
+      message.contains(offLights) or message.contains(
+        offLights2
+      ) -> "lights off"
+      message.contains(dancing) or message.contains(
+        dancing2
+      ) -> "dancing"
+      message.contains(bulb) or message.contains(
+        bulb2
+      ) or message.contains(bulb3) -> "bulb"
       message.contains(sunny) -> "sunny"
       message.contains(rainy) -> "rainy"
       message.contains(cloudy) -> "cloudy"
@@ -62,14 +70,22 @@ object Commands {
   }
 
   fun checkColorControl(message: String, block: (Int) -> Unit) {
-    if (message.contains(bulb) or message.contains(bulb2) or message.contains(bulb3)) {
+    if (message.contains(bulb) or message.contains(
+        bulb2
+      ) or message.contains(bulb3)) {
       var color = -469762303
       when {
-        message.contains(red) or message.contains(red2) -> color = -620820478
+        message.contains(red) or message.contains(
+          red2
+        ) -> color = -620820478
         message.contains(orange) -> color = -37886
-        message.contains(yellow) or message.contains(yellow2) -> color = -469762303
+        message.contains(yellow) or message.contains(
+          yellow2
+        ) -> color = -469762303
         message.contains(green) -> color = 872470553
-        message.contains(blue) or message.contains(blue2) -> color = -16251137
+        message.contains(blue) or message.contains(
+          blue2
+        ) -> color = -16251137
         message.contains(purple) -> color = -64826
       }
       block(color)
@@ -77,10 +93,17 @@ object Commands {
   }
 
   fun sendCommandMessage(reference: DatabaseReference, message: String) {
-    reference.sendMessage(deviceName, getFireBaseMessage(message))
+    reference.sendMessage(
+      deviceName,
+      getFireBaseMessage(message)
+    )
     when {
-      message.contains(onLights) or message.contains(onLights2) -> reference.ledTurnOn()
-      message.contains(offLights) or message.contains(offLights2) -> reference.ledTurnOff()
+      message.contains(onLights) or message.contains(
+        onLights2
+      ) -> reference.ledTurnOn()
+      message.contains(offLights) or message.contains(
+        offLights2
+      ) -> reference.ledTurnOff()
     }
   }
 }

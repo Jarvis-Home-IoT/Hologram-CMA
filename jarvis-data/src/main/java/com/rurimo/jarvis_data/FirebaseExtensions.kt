@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.rurimo.jarvis_cms
+package com.rurimo.jarvis_data
 
 import com.google.firebase.database.DatabaseReference
 
@@ -27,5 +27,10 @@ fun DatabaseReference.ledTurnOff() {
 }
 
 fun DatabaseReference.sendMessage(name: String, message: String) {
-  this.child("Message").push().setValue(ControlMessage(name, message))
+  this.child("Message").push().setValue(
+      ControlMessage(
+          name,
+          message
+      )
+  )
 }

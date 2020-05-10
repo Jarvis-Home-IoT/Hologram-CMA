@@ -24,10 +24,12 @@ android {
 }
 
 dependencies {
+    // internal module
+    implementation project(":jarvis-data")
+
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
     implementation "org.jetbrains.anko:anko:$ankoVersion"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
-    implementation "com.google.firebase:firebase-database:$firebaseDatabaseVersion"
 
     // coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
