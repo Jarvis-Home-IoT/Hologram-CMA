@@ -7,7 +7,7 @@
 ### Download
 [![jitpack](https://jitpack.io/v/Hologram-IoT-Service/Hologram-CMA.svg)](https://jitpack.io/#Hologram-IoT-Service/Hologram-CMA) <br>
 Here is the `jarvis-data` model library that used as common thrid-party library. <br>
-This library is used in `Holohram-CMA` and `Holohram-Hardware-core` project. <br><br>
+This library is used in `Holohram-CMA` and `Holohram-Hardware-core` project. <br>
 
 #### Step1
 Add the JitPack repository to your build file. <br>
@@ -43,7 +43,28 @@ ledTurnOff()
 sendMessage(name: String, message: String)
 ```
 
+#### getFireBaseMessage
+We can get pre-existed message string type from a sentence using the `getFireBaseMessage` method.<br>
+If a sentence includes any pre-existed word string, we can get processed command message as a String type.
+```kotin
+if (getFireBaseMessage(command) == command.trim()) {
+     toast("query : $result")
+     queryServer(command)
+}
+```
 
+#### sendCommandMessage
+We can send command messages to the Elsa-Heart directly using this functionality.<br>
+`sendCommandMessage` requires an instance of the `DatabaseReference` and a `message`as arguments. <br>
+Here is the basic example of the usage.<br>
+```kotlin
+private val databaseReference = fireBaseDatabase.reference
+
+... // skip body // ...
+
+val command = result.replace(commanderName, "").trim()
+sendCommandMessage(databaseReference, command)
+```
 
 ### Used Tech Stacks
 - Kotlin based with Java.
