@@ -7,7 +7,43 @@
 ### Download
 [![jitpack](https://jitpack.io/v/Hologram-IoT-Service/Hologram-CMA.svg)](https://jitpack.io/#Hologram-IoT-Service/Hologram-CMA) <br>
 Here is the `jarvis-data` model library that used as common thrid-party library. <br>
-This library is used in `Holohram-CMA` and `Holohram-Hardware-core` project.
+This library is used in `Holohram-CMA` and `Holohram-Hardware-core` project. <br><br>
+
+#### Step1
+Add the JitPack repository to your build file. <br>
+Add it in your root build.gradle at the end of repositories:
+```gradle
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+#### Step2
+Add the dependency.
+```gradle
+dependencies {
+   implementation 'com.github.Hologram-IoT-Service:Hologram-CMA:1.0.0'
+}
+```
+
+### How to use?
+This CMA library provides below `DatabaseReference` extensions.
+```kotlin
+// send `turn on` command to the Elsa-Heart.
+ledTurnOn()
+
+// send `turn off` command to the Elsa-Heart.
+ledTurnOff()
+
+// send a customized message to the Elsa-Heart.
+// the message format is composed with name (tag) and the message.
+// Elsa-heart will be get this message and process based on the message information.
+sendMessage(name: String, message: String)
+```
+
+
 
 ### Used Tech Stacks
 - Kotlin based with Java.
